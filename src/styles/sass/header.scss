@@ -1,0 +1,87 @@
+.header {
+  position: relative;
+  padding: 3.75rem 3.125rem 1.25rem 3.125rem;
+  display: flex;
+  gap: 1.25rem;
+  font-family: $fontDefault;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: normal;
+
+  color: $colorDefault;
+
+  &__navigation-list {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.125rem;
+    gap: 0.625rem;
+  }
+
+  &__phone-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: auto;
+  }
+
+  &__phone {
+    font-family: $fontDefault;
+    font-size: 1.5rem;
+
+    color: $colorDefault;
+  }
+
+  &__phone-callback {
+    padding-bottom: 0.125rem;
+    letter-spacing: 0.4px;
+    font-family: $fontSecond;
+    font-size: 0.625rem;
+    font-weight: 700;
+
+    border-bottom: 1px solid $colorCorporate;
+  }
+
+  &__select-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3125rem;
+    font-size: 1.125rem;
+  }
+
+  &__select-block-wrap {
+    display: flex;
+    flex-direction: row;
+    gap: 0.46875rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__select-text {
+    font-size: 0.75rem;
+
+    color: $colorCorporate;
+
+    &:after {
+      content: url("../../img/icons/icon_triangle.svg");
+    }
+  }
+
+  &__select-list {
+    position: absolute;
+    top: 110%;
+    left: 33px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.625rem;
+    display: none;
+  }
+
+
+
+}
+
+
+

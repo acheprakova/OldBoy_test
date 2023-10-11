@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "Open Sans";
+  src: url("../../fonts/OpenSans/open-sans-semibold.ttf") format("ttf"),
+  url("../../fonts/OpenSans/open-sans-semibold.woff") format("woff"),
+  url("../../fonts/OpenSans/open-sans-semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../../fonts/OpenSans/open-sans-bold.ttf") format("ttf"),
+  url("../../fonts/OpenSans/open-sans-bold.woff") format("woff"),
+  url("../../fonts/OpenSans/open-sans-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rex";
+  src: url("../../fonts/Rex/rex-bold.ttf") format("ttf"),
+  url("../../fonts/Rex/rex-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+

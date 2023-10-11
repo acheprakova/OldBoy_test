@@ -1,0 +1,18 @@
+@mixin mediaMax($mediaWidth) {
+  @media only screen and (max-width: $mediaWidth - 1) {
+    @content;
+  }
+}
+
+
+@mixin mediaMin($mediaWidth) {
+  @media only screen and (min-width: $mediaWidth) {
+    @content;
+  }
+}
+
+@mixin mediaDistance($mediaWidthMin, $mediaWidthMax) {
+  @media only screen and (min-width: $mediaWidthMin) and (max-width: $mediaWidthMax - 1) {
+    @content;
+  }
+}

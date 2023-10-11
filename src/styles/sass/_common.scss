@@ -1,0 +1,54 @@
+html {
+  font-size: 16px;
+  max-width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  height: 100%;
+  background-image: url("../../img/images/main-page-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.45);
+  }
+}
+
+
+header, main, footer {
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+p, h2 {
+  margin: 0;
+}

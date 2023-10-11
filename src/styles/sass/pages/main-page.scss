@@ -1,0 +1,201 @@
+.main-content {
+  height: calc(100vh - 10.75rem);
+  position: relative;
+  padding: 0 3.125rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: $fontDefault;
+  text-transform: uppercase;
+  font-style: normal;
+
+
+  &__offer-img-wrap {
+    position: relative;
+
+  }
+
+  &__info-img-wrap {
+    position: absolute;
+    bottom: -0.3125rem;
+    left: calc(50% - 7.1875rem);
+  }
+
+  &__form-wrap {
+    width: max-content;
+    min-width: 16.0625rem; //vremenno
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    text-align: center;
+  }
+
+  &__form-text-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3125rem;
+    line-height: 1.125rem;
+    padding-bottom: 1.25rem;
+
+    border-bottom: 1px solid $colorCorporate;
+  }
+
+  &__form-title {
+    font-size: 1.5rem;
+
+    color: $colorCorporate;
+  }
+
+  &__form-description {
+    font-size: 0.875rem;
+
+    color: $colorDefault;
+  }
+
+  &__form-checkbox-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    font-family: $fontSecond;
+    font-size: 0.625rem;
+    font-weight: 600;
+    font-style: normal;
+    align-items: center;
+    line-height: normal;
+
+    color: $colorDefault;
+  }
+
+  &__form-submit-btn {
+    font-family: $fontSecond;
+    font-weight: 700;
+    font-size: 0.75rem;
+    line-height: normal;
+    width: 100%;
+    padding: 0.625rem 1.6875rem;
+    border-radius: 1.5625rem;
+    text-transform: uppercase;
+
+    background: $colorCorporate;
+    color: $colorDefault;
+  }
+
+}
+
+.main-content__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  input {
+    display: block;
+    box-sizing: border-box;
+    padding-left: 1.25rem;
+    border: none;
+    min-width: 16.5rem;
+    min-height: 3.125rem;
+    width: 100%;
+    font-family: $fontDefault;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+
+    background: transparent;
+    background-image: url("../../../img/images/input.svg");
+    background-repeat: no-repeat;
+
+  }
+
+  input::placeholder {
+    font-family: $fontDefault;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  input:focus {
+    outline: none;
+  }
+}
+
+//инпут переделать
+
+.main-content__checkbox-label {
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  text-align: left;
+
+  input {
+    position: absolute;
+    background-image: none;
+    -webkit-appearance: none;
+  }
+
+  input:checked ~ .checkbox .checkbox__icon {
+    display: block;
+  }
+
+  input:checked ~ .checkbox {
+    background-color: $colorCorporate;
+  }
+
+  b {
+    width: 100%;
+
+    a {
+      cursor: pointer;
+      color: $colorCorporate;
+    }
+
+  }
+
+  .main-content__checkbox-body {
+    display: flex;
+    gap: 0.625rem;
+  }
+
+  .checkbox {
+    position: relative;
+    min-width: 1rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+
+    border: 1px solid $colorCorporate;
+    background-color: transparent;
+
+    &__icon {
+      display: none;
+      width: inherit;
+    }
+
+
+  }
+
+}
+
+
+
+
+.error span.error:before {
+  content: url("../../../img/icons/icon_close.svg");
+  margin-right: 0.3125rem;
+}
+
+span.error {
+  position: relative;
+  font-family: $fontSecond;
+  font-size: 0.75rem;
+  text-align: left;
+  color: #ff2e2e;
+  display: block;
+  max-width:240px;
+}
+
