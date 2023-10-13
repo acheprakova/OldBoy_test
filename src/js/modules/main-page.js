@@ -7,16 +7,16 @@ export function formValid() {
     const inputs = document.querySelectorAll('.js-input');
     const popup = document.getElementById('popup');
 
+
     form.addEventListener('submit', e => {
         e.preventDefault();
-        if(validateInputs(name, tel, email, checkbox)) {
+        if (validateInputs(name, tel, email, checkbox)) {
             popup.classList.add('open');
-        };
+        }
+        ;
     });
 
     const setError = (element, message) => {
-        console.log(element)
-        console.log(message)
         const inputControl = element.parentElement;
         const errorDisplay = inputControl.querySelector('.error');
 
@@ -128,6 +128,16 @@ export function formValid() {
 
         return flag;
     }
+
+    document.addEventListener('click', e => {
+        popup.classList.remove('open');
+    })
+
+    document.addEventListener('keydown', e => {
+        if (e.keyCode == 27) {
+            popup.classList.remove('open');
+        }
+    })
 }
 
 window.addEventListener("DOMContentLoaded", function () {
@@ -177,3 +187,4 @@ window.addEventListener("DOMContentLoaded", function () {
         input.addEventListener("keydown", mask, false);
     });
 });
+

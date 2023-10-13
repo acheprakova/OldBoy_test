@@ -100,6 +100,7 @@
     flex-direction: column;
     gap: 0.3125rem;
     font-size: 1.125rem;
+    cursor: pointer;
   }
 
   &__select-block-wrap {
@@ -111,10 +112,12 @@
   }
 
   &__select-text {
-    white-space: nowrap;
     font-size: 0.75rem;
-
     color: $colorCorporate;
+
+    @include mediaMin($tablet-max-width) {
+      width: 90%;
+    }
 
     &:after {
       content: url("../../img/icons/icon_triangle.svg");
@@ -135,6 +138,7 @@
 
   &__menu-burger {
     display: none;
+    cursor: pointer;
 
     @include mediaMax($tablet-max-width) {
       display: flex;
@@ -162,7 +166,7 @@
     &.active span {
       &:nth-child(1) {
         transform: translate(0, 50%) rotate(45deg);
-        top:2px;
+        top: 2px;
       }
 
       &:nth-child(2) {
@@ -171,7 +175,7 @@
 
       &:nth-child(3) {
         transform: translate(0, 50%) rotate(-45deg);
-        top:-5px
+        top: -5px
       }
     }
   }
