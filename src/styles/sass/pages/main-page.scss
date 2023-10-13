@@ -9,26 +9,62 @@
   text-transform: uppercase;
   font-style: normal;
 
+  @include mediaMax($small-tablet-max-width) {
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
 
   &__offer-img-wrap {
     position: relative;
-
+    @include mediaMin($desktop-small-width) {
+      width: 33%;
+      img {
+        width: 100%;
+      }
+    }
   }
 
   &__info-img-wrap {
-    position: absolute;
+    position: fixed;
     bottom: -0.3125rem;
     left: calc(50% - 7.1875rem);
+    @include mediaMax($tablet-max-width) {
+      display: none;
+    }
+    @include mediaMin($desktop-small-width) {
+      left: calc(25%);
+      width: 50%;
+      img {
+        width: 100%;
+        max-height: 45vh;
+      }
+    }
+
   }
 
   &__form-wrap {
+    margin-right: 3.75rem;
     width: max-content;
-    min-width: 16.0625rem; //vremenno
     position: relative;
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
     text-align: center;
+
+    @include mediaMax($small-tablet-max-width) {
+      margin-right: 0;
+      padding-bottom: 10vh;
+    }
+    @include mediaMin($desktop-small-width) {
+      zoom: 1.1
+    }
+
+    @include mediaMin($desktop-max-width) {
+      zoom: 1.3
+    }
+
   }
 
   &__form-text-wrap {
@@ -80,7 +116,6 @@
     background: $colorCorporate;
     color: $colorDefault;
   }
-
 }
 
 .main-content__form {
@@ -122,7 +157,6 @@
   }
 }
 
-//инпут переделать
 
 .main-content__checkbox-label {
 
@@ -182,8 +216,6 @@
 }
 
 
-
-
 .error span.error:before {
   content: url("../../../img/icons/icon_close.svg");
   margin-right: 0.3125rem;
@@ -196,6 +228,6 @@ span.error {
   text-align: left;
   color: #ff2e2e;
   display: block;
-  max-width:240px;
+  max-width: 15rem;
 }
 

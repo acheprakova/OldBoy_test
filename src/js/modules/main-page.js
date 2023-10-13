@@ -5,10 +5,13 @@ export function formValid() {
     const checkbox = document.getElementById('confid');
     const form = document.querySelector('form');
     const inputs = document.querySelectorAll('.js-input');
+    const popup = document.getElementById('popup');
 
     form.addEventListener('submit', e => {
         e.preventDefault();
-        validateInputs(name, tel, email, checkbox);
+        if(validateInputs(name, tel, email, checkbox)) {
+            popup.classList.add('open');
+        };
     });
 
     const setError = (element, message) => {
@@ -49,7 +52,7 @@ export function formValid() {
             }
 
             if (input === tel) {
-               let telValue = tel.value.trim();
+                let telValue = tel.value.trim();
 
                 if (telValue.length < 17) {
                     setError(tel, 'Введите номер телефона');
@@ -68,7 +71,6 @@ export function formValid() {
                     setSuccess(email);
                 }
             }
-console.log('tetetete')
 
             if (input === checkbox) {
                 if (checkbox.checked) {
@@ -82,11 +84,12 @@ console.log('tetetete')
     });
 
     const validateInputs = (name, tel, email, checkbox) => {
-
+        var flag = true;
         if (name) {
             let nameValue = name.value.trim();
             if (nameValue === '') {
                 setError(name, 'Введите ваше имя');
+                flag = false;
             } else {
                 setSuccess(name);
             }
@@ -96,6 +99,7 @@ console.log('tetetete')
             let numberValue = tel.value.trim();
             if (numberValue.length != 17) {
                 setError(tel, 'Введите номер телефона');
+                flag = false;
             } else {
                 setSuccess(tel);
             }
@@ -105,29 +109,31 @@ console.log('tetetete')
             let emailValue = email.value.trim();
             if (emailValue === '') {
                 setError(email, 'Введите ваш email');
+                flag = false;
             } else if (!isValidEmail(emailValue)) {
                 setError(email, 'Адрес эл.почты введен некорректно');
+                flag = false;
             } else {
                 setSuccess(email);
             }
         }
 
 
-            if (checkbox.checked) {
-                setSuccess(checkbox.parentElement);
-                console.log("success");
-            } else {
-                setError(checkbox.parentElement, "Отметьте соглашение с политикой конфиденциальности");
-                console.log('error');
-            }
+        if (checkbox.checked) {
+            setSuccess(checkbox.parentElement);
+        } else {
+            setError(checkbox.parentElement, "Отметьте соглашение с политикой конфиденциальности");
+            flag = false;
+        }
 
-
+        return flag;
     }
 }
 
-window.addEventListener("DOMContentLoaded", function() {
-    [].forEach.call( document.querySelectorAll('#tel'), function(input) {
+window.addEventListener("DOMContentLoaded", function () {
+    [].forEach.call(document.querySelectorAll('#tel'), function (input) {
         let keyCode;
+
         function mask(event) {
             event.keyCode && (keyCode = event.keyCode);
             let pos = this.selectionStart;
@@ -139,7 +145,7 @@ window.addEventListener("DOMContentLoaded", function() {
                 i = 0,
                 def = matrix.replace(/\D/g, ""),
                 val = this.value.replace(/\D/g, ""),
-                new_value = matrix.replace(/[_\d]/g, function(a) {
+                new_value = matrix.replace(/[_\d]/g, function (a) {
                     return i < val.length ? val.charAt(i++) : a
                 });
 
@@ -151,7 +157,7 @@ window.addEventListener("DOMContentLoaded", function() {
             }
 
             let reg = matrix.substr(0, this.value.length).replace(/_+/g,
-                function(a) {
+                function (a) {
                     return "\\d{1," + a.length + "}"
                 }).replace(/[+()]/g, "\\$&");
             reg = new RegExp("^" + reg + "$");

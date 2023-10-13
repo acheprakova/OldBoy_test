@@ -1,6 +1,9 @@
 import {formValid} from "./modules/main-page"
-console.log('test');
+import {menuBurger} from "./modules/header";
+
 document.addEventListener('DOMContentLoaded', function () {
+    //HEADER
+    menuBurger();
     // MAIN
     formValid();
 
